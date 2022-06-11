@@ -1,0 +1,78 @@
+<div class="container">
+  <app-header></app-header>
+  <div class="container_table">
+    <p-table
+      [value]="countryData"
+      responsiveLayout="stack"
+      [style]="{
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '50px auto'
+      }"
+      [scrollable]="true"
+      scrollHeight="500px"
+      selectionMode="single"
+      styleClass="p-datatable-gridlines"
+    >
+      <ng-template pTemplate="body" let-country>
+        <tr>
+          <td><img src="{{ country.flags.png }}" class="flag_img" /></td>
+          <td class="shortcut">
+            <h4>{{ country.fifa }}</h4>
+          </td>
+        </tr>
+        <tr>
+          <td class="td_style">
+            <strong>Stolica : </strong>
+            <h4>{{ country.capital }}</h4>
+          </td>
+        </tr>
+        <tr>
+          <td class="td_style">
+            <strong>Populacja : </strong>
+            <h4>{{ country.population }}</h4>
+          </td>
+        </tr>
+        <tr>
+          <td class="td_style">
+            <strong>Waluta : </strong>
+
+            <h4>{{ currency }}</h4>
+          </td>
+        </tr>
+        <tr>
+          <td class="td_style">
+            <strong>Język : </strong>
+
+            <h4>{{ language[0] }}</h4>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="td_style">
+            <strong>Flaga : </strong>
+
+            <h4>{{ country.cca2 }}</h4>
+          </td>
+        </tr>
+        <tr>
+          <td class="td_style">
+            <strong>Powierzchnia : </strong>
+
+            <h4>{{ country.area }} m2</h4>
+          </td>
+        </tr>
+        <tr>
+          <td class="td_style">
+            <strong>Region : </strong>
+
+            <h4>{{ country.region }}</h4>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <app-footer></app-footer>
+  <p-toast position="bottom-center"></p-toast>
+</div>

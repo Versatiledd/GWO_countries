@@ -1,0 +1,28 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <a routerLink="/" (click)="backToMainApp()">
+      <img
+        src="assets/images/planeta.png"
+        height="40"
+        class="p-button-sm header_logo"
+      />
+    </a>
+  </ng-template>
+
+  <ng-template pTemplate="end">
+    <button
+      pButton
+      type="button"
+      label="Cofnij"
+      class="p-button-sm"
+      *ngIf="showBackButton.value"
+      (click)="backToPreviousPage()"
+      [style]="{
+        background: '#0d3c61',
+        border: '1px solid #0d3c61',
+        width: '75px',
+        boxShadow: 'none'
+      }"
+    ></button>
+  </ng-template>
+</p-menubar>

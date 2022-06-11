@@ -1,0 +1,38 @@
+<div class="container">
+  <app-header></app-header>
+  <div class="container_table">
+    <p-table
+      [value]="countries"
+      responsiveLayout="stack"
+      [style]="{
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '50px auto',
+        flexGrow: 1
+      }"
+      [scrollable]="true"
+      scrollHeight="500px"
+      selectionMode="single"
+    >
+      <ng-template pTemplate="body" let-country>
+        <div>
+          <tr class="country_row">
+            <td class="flag_container">
+              <img src="{{ country.flags.png }}" class="flag_img" />
+            </td>
+            <td class="td_style" (click)="onRowSelect(country.name.common)">
+              {{ country.name.common }}
+            </td>
+          </tr>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <div class="country_spinner" *ngIf="loading">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <app-footer></app-footer>
+  <p-toast position="bottom-center"></p-toast>
+  <router-outlet></router-outlet>
+</div>

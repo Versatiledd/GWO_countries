@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="container_countries">
+  <div class="container_single_country" *ngFor="let data of continents">
+    <a routerLink="{{ data.pathURL }}" class="country_link">
+      <p-card
+        header="{{ data.continent }}"
+        [style]="{ width: '350px', margin: '20px' }"
+        class="single_tile_country"
+      >
+        <ng-template pTemplate="header">
+          <img
+            alt="Card"
+            src="{{ data.pathImage }}"
+            [style]="{ height: '300px', objectFit: 'cover' }"
+          />
+        </ng-template>
+      </p-card>
+    </a>
+  </div>
+</div>
+<app-footer></app-footer>

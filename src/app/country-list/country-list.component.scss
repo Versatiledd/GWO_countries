@@ -1,0 +1,57 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .container_table {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.td_style {
+  cursor: pointer;
+  min-width: 350px;
+  transition: all 0.2s ease-in;
+  min-height: 42px;
+  line-height: 42px;
+  padding-left: 10px;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+::ng-deep .p-datatable-scrollable .p-datatable-wrapper {
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+.country_row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.flag_container {
+  max-width: 80px;
+  display: flex;
+  justify-content: flex-end;
+
+  .flag_img {
+    display: block;
+    width: 80%;
+    height: 80%;
+  }
+}
+.country_spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
